@@ -21,7 +21,7 @@ class CuentaController extends Controller
     {
         $response = new Response("<h1>Demo Capacitación !!</h1>", 200 );
         $em = $this->getDoctrine()->getManager();
-        $cuentas =  $em->getRepository('AppBundle:Cuenta')->find(array(), array('id'=>'desc'));
+        $cuentas =  $em->getRepository('AppBundle:Cuenta')->findBy(array(), array('id'=>'desc'));
 
         return  $this->renderView("cuenta/list.html.twig", array(
             'cuentas' => $cuentas

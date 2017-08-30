@@ -25,7 +25,7 @@ class CuentaController extends Controller
 
         return  $this->render("cuenta/list.html.twig", array(
             'cuentas' => $cuentas
-        ));:
+        ));
     }
     /**
      * @Route("/cuentas")

@@ -20,7 +20,12 @@ class CuentaController extends Controller
     public function indexAction( Request $request)
     {
         $response = new Response("<h1>Demo Capacitación !!</h1>", 200 );
-        return $response;
+        $em = $this->getDoctrine()->getManager();
+        $cuentas =  $em->getRepository('AppBundle:Cuenta')->find(array(), array('id'=>'desc'));
+
+        return  $this->renderView("cuenta/list.html.twig", array(
+            'cuentas' => $cuentas
+        ));
     }
     /**
      * @Route("/cuentas")

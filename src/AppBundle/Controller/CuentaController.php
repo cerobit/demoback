@@ -23,9 +23,9 @@ class CuentaController extends Controller
         $em = $this->getDoctrine()->getManager();
         $cuentas =  $em->getRepository('AppBundle:Cuenta')->findBy(array(), array('id'=>'desc'));
 
-        return  $this->renderView("cuenta/list.html.twig", array(
+        return  $this->render("cuenta/list.html.twig", array(
             'cuentas' => $cuentas
-        ));
+        ));:
     }
     /**
      * @Route("/cuentas")
